@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+class Homework extends React.Component {
+  render() {
+     const formatName =(user)=> {
+      return user.firstName + ' ' + user.lastName; //img it is not working
+    }
+
+    const user = {
+      firstName: 'Ruba',
+      lastName: 'Abu Isa',
+      avatarUrl: 'https://www.w3schools.com/howto/img_avatar2.png'
+    };
+
+
+    const getGreeting = (user) => {
+        if(user) {
+          return <h1>Hello, {formatName(user)}!</h1>;
+        }
+        return <h1>Hello, strenger</h1>;
+      }
+
+    const element =getGreeting(user);
+   
+    return element;
+  }
 }
 
-export default App;
+
+export default Homework;
+
+
